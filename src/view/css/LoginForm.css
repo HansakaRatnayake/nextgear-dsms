@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+.login-card{
+    -fx-pref-width: 397px;
+    -fx-pref-height: 416px;
+    -fx-border-radius: 23px;
+    -fx-background-color: rgba(165, 151, 139, 0.46);
+    -fx-background-radius: 23px;
+}
+
+.login-txt-fields{
+    -fx-pref-width: 330px;
+    -fx-pref-height: 36px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: white;
+    -fx-padding:0 23px 0 23px;
+    -fx-text-fill: #939393;
+    -fx-font-family: "Open Sans";
+    -fx-font-weight: 700;
+    -fx-font-size: 12px;
+}
+
+.btn-login{
+
+    -fx-pref-width: 330px;
+    -fx-pref-height: 36px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: #FF6A00;
+    -fx-font-family: "Open Sans";
+    -fx-font-weight: 700;
+    -fx-font-size: 12px;
+
+}
+
+.lbl-login{
+    -fx-text-fill: #FFF;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-font-family: "Staatliches";
+}
+
+.horizontal-separator{
+    -fx-pref-width: 360px;
+}
+
+
+
+
+
+.txt-description{
+    -fx-font-family: "Staatliches";
+    -fx-font-weight: 400;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+
+}
