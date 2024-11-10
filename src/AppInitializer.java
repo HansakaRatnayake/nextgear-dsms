@@ -16,10 +16,12 @@ public class AppInitializer extends Application {
                 new Scene(
                         FXMLLoader.load(
                                 getClass()
-                                        .getResource("view/LoginForm.fxml")
+                                        .getResource("view/MainWindowForm.fxml")
                         )
                 )
         );
+        primaryStage.centerOnScreen();
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 }

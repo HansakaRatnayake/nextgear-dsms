@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+.main-window-sidenav-btn{
+    -fx-pref-width: 247px;
+    -fx-pref-height: 61px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-background-color: #474747;
+    -fx-border-color: #FF6A00;
+    -fx-border-width: 1px;
+    -fx-text-fill: #FF6A00;
+    -fx-font-weight: 700;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 14px;
+
+}
+
+.main-window-sidenav-btn:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #333131;
+    -fx-border-color: white;
+    -fx-text-fill: #ffffff;
+}
+
+.lbl-username{
+    -fx-font-family: "Staatliches";
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-text-alignment: right;
+    -fx-font-size: 20px;
+
+}

@@ -3,6 +3,15 @@
     src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
 }
 
+.main-context{
+    -fx-background-image: url('../assets/login-background-image.jpg');
+}
+
+.img-login{
+    -fx-pref-width: 100%;
+    -fx-fit-to-height: 100%;
+}
+
 .login-card{
     -fx-pref-width: 397px;
     -fx-pref-height: 416px;
@@ -10,6 +19,7 @@
     -fx-background-color: rgba(165, 151, 139, 0.46);
     -fx-background-radius: 23px;
 }
+
 
 .login-txt-fields{
     -fx-pref-width: 330px;

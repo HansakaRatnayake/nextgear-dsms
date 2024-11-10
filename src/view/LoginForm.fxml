@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane prefHeight="540.0" prefWidth="960.0" styleClass="main-context" stylesheets="@styles/LoginForm.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="960.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/login-background-image.jpg" />
          </image>
@@ -22,31 +22,31 @@
             <Rectangle2D height="2200.0" width="3910.0" />
          </viewport>
       </ImageView>
-      <AnchorPane layoutX="526.0" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" styleClass="login-card" stylesheets="@css/LoginForm.css">
+      <AnchorPane layoutX="526.0" layoutY="62.0" prefHeight="200.0" prefWidth="200.0" styleClass="login-card" stylesheets="@styles/LoginForm.css">
          <children>
-            <TextField layoutX="34.0" layoutY="196.0" promptText="Username" styleClass="login-txt-fields" stylesheets="@css/LoginForm.css" />
-            <TextField layoutX="34.0" layoutY="249.0" promptText="Password" styleClass="login-txt-fields" stylesheets="@css/LoginForm.css" />
-            <Button layoutX="34.0" layoutY="317.0" mnemonicParsing="false" styleClass="btn-login" stylesheets="@css/LoginForm.css" text="login" />
-            <Label layoutX="181.0" layoutY="96.0" styleClass="lbl-login" stylesheets="@css/LoginForm.css" text="Login" />
-            <Separator layoutX="20.0" layoutY="149.0" opacity="0.3" prefHeight="4.0" prefWidth="356.0" styleClass="horizontal-separator" stylesheets="@css/LoginForm.css" />
-            <Label layoutX="-368.0" layoutY="77.0" stylesheets="@css/LoginForm.css" text="Gear" textFill="WHITE">
+            <TextField layoutX="34.0" layoutY="196.0" promptText="Username" styleClass="login-txt-fields" stylesheets="@styles/LoginForm.css" />
+            <TextField layoutX="34.0" layoutY="249.0" promptText="Password" styleClass="login-txt-fields" stylesheets="@styles/LoginForm.css" />
+            <Button layoutX="34.0" layoutY="317.0" mnemonicParsing="false" styleClass="btn-login" stylesheets="@styles/LoginForm.css" text="login" />
+            <Label layoutX="181.0" layoutY="96.0" styleClass="lbl-login" stylesheets="@styles/LoginForm.css" text="Login" />
+            <Separator layoutX="20.0" layoutY="149.0" opacity="0.3" prefHeight="4.0" prefWidth="356.0" styleClass="horizontal-separator" stylesheets="@styles/LoginForm.css" />
+            <Label layoutX="-368.0" layoutY="77.0" stylesheets="@styles/LoginForm.css" text="Gear" textFill="WHITE">
                <font>
                   <Font name="Open Sans Extrabold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="-470.0" layoutY="77.0" stylesheets="@css/LoginForm.css" text="Next" textFill="#ff6a00">
+            <Label layoutX="-470.0" layoutY="77.0" stylesheets="@styles/LoginForm.css" text="Next" textFill="#ff6a00">
                <font>
                   <Font name="Open Sans Extrabold" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="-470.0" layoutY="125.0" stylesheets="@css/LoginForm.css" text="Driving School" textFill="WHITE">
+            <Label layoutX="-470.0" layoutY="125.0" stylesheets="@styles/LoginForm.css" text="Driving School" textFill="WHITE">
                <font>
                   <Font name="Open Sans Extrabold" size="40.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <TextFlow layoutX="61.0" layoutY="270.0" lineSpacing="6.0" prefHeight="135.0" prefWidth="330.0" styleClass="txt-description" stylesheets="@css/LoginForm.css">
+      <TextFlow layoutX="61.0" layoutY="270.0" lineSpacing="6.0" prefHeight="135.0" prefWidth="330.0" styleClass="txt-description" stylesheets="@styles/LoginForm.css">
          <children>
             <Text fill="WHITE" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to NextGear Management SystemA dedicated platform for efficient and secure management of training schedules, trainee progress, and essential business operations. Log in to access tools that empower you to deliver top-quality driving education and seamlessly oversee all aspects of your driving school" wrappingWidth="278.13000106811523" />
          </children>
