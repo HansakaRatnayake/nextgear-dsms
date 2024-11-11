@@ -3,9 +3,15 @@
     src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
 }
 
+.side-nav-outer{
+    -fx-background-color: #353535;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
 .main-window-sidenav-btn{
-    -fx-pref-width: 247px;
-    -fx-pref-height: 61px;
+    -fx-pref-width: 168px;
+    -fx-pref-height: 42px;
     -fx-border-radius: 6px;
     -fx-background-radius: 6px;
     -fx-background-color: #474747;
@@ -24,6 +30,22 @@
     -fx-border-color: white;
     -fx-text-fill: #ffffff;
 }
+
+.lbl-next{
+    -fx-text-fill: #FF6A00;
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+    -fx-font-family: "Open Sans";
+
+}
+.lbl-gear{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+    -fx-font-family: "Open Sans";
+
+}
+
 
 .lbl-username{
     -fx-font-family: "Staatliches";

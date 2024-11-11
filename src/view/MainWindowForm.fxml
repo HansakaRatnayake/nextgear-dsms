@@ -4,54 +4,46 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <Pane prefHeight="991.0" prefWidth="426.0" BorderPane.alignment="CENTER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="70.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="50.0" layoutY="38.0" prefHeight="855.0" prefWidth="331.0" style="-fx-border-radius: 10px; -fx-background-radius: 10px; -fx-background-color: #353535;">
+            <Separator opacity="0.7" prefHeight="0.0" prefWidth="1220.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="70.0" />
+            <Label layoutX="62.0" layoutY="28.0" styleClass="lbl-next" stylesheets="@styles/MainWindow.css" text="Next" textFill="#ff6a00" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1169.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="23.0" styleClass="lbl-gear" stylesheets="@styles/MainWindow.css" text="Gear" textFill="#ff6a00" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="1111.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label styleClass="lbl-username" stylesheets="@styles/MainWindow.css" text="Hansaka Ratnayake" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="14.0" />
+      <Label layoutX="10.0" layoutY="10.0" styleClass="lbl-username" stylesheets="@styles/MainWindow.css" text="Admin" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="37.0" />
+      <Label layoutX="10.0" layoutY="10.0" styleClass="lbl-username" stylesheets="@styles/MainWindow.css" text="Nov 11 2:14 PM" AnchorPane.rightAnchor="264.0" AnchorPane.topAnchor="14.0" />
+      <AnchorPane prefHeight="200.0" prefWidth="289.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <AnchorPane prefHeight="581.0" prefWidth="225.0" styleClass="side-nav-outer" stylesheets="@styles/MainWindow.css" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="25.0">
                <children>
-                  <Button layoutX="136.0" layoutY="67.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Dashboard" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="46.0" />
-                  <Button layoutX="45.0" layoutY="114.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainings" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="122.0" />
-                  <Button layoutX="55.0" layoutY="124.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="198.0" />
-                  <Button layoutX="65.0" layoutY="134.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="198.0" />
-                  <Button layoutX="75.0" layoutY="144.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="274.0" />
-                  <Button layoutX="85.0" layoutY="154.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="350.0" />
-                  <Button layoutX="95.0" layoutY="164.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="426.0" />
-                  <Button layoutX="105.0" layoutY="174.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="502.0" />
-                  <Button layoutX="115.0" layoutY="184.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="578.0" />
-                  <Button layoutX="125.0" layoutY="194.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="654.0" />
-                  <Button layoutX="135.0" layoutY="204.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainees" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="730.0" />
+                  <Button mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Dashboard" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="37.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="89.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Employee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="141.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Training" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="192.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Schedule" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="244.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Vehicle" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="295.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Supplier" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="347.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Payment" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="451.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Activity log" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="503.0" />
+                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Exams" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="399.0" />
                </children>
             </AnchorPane>
          </children>
-      </Pane>
-   </left>
-   <center>
-      <Pane prefHeight="991.0" prefWidth="1459.0" BorderPane.alignment="CENTER" />
-   </center>
-   <top>
-      <AnchorPane prefHeight="89.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Next" textAlignment="CENTER" textFill="#ff6a00" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="28.0">
-               <font>
-                  <Font name="Open Sans Extrabold" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="113.0" layoutY="28.0" text="Gear" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="113.0" AnchorPane.topAnchor="28.0">
-               <font>
-                  <Font name="Open Sans Extrabold" size="30.0" />
-               </font>
-            </Label>
-            <Separator prefHeight="0.0" prefWidth="1850.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="89.0" />
-            <Label styleClass="lbl-username" stylesheets="@styles/MainWindow.css" text="Hansaka Rathnayake" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="28.0" />
-            <Label layoutX="10.0" layoutY="10.0" styleClass="lbl-username" stylesheets="@styles/MainWindow.css" text="Admin" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="51.0" />
-            <Label layoutX="10.0" layoutY="10.0" styleClass="lbl-username" stylesheets="@styles/MainWindow.css" text="Nov10 9:42 PM" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="28.0" />
-         </children>
       </AnchorPane>
-   </top>
-</BorderPane>
+   </children>
+</AnchorPane>
