@@ -55,3 +55,13 @@
     -fx-font-size: 20px;
 
 }
+
+
+.lbl-version{
+    -fx-font-family: "Open Sans";
+    -fx-font-weight: 700;
+    -fx-font-size: 10px;
+    -fx-text-alignment: right;
+    -fx-text-fill: rgba(255, 255, 255, 0.87);
+
+}
