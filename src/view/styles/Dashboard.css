@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+.lbl-heading{
+    -fx-font-family: 'Staatliches';
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+
+}
+
+.hellouser-outer{
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-background-color: #FF6A00;
+
+}
+
+.lbl-hello-user{
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+    -fx-font-style: italic;
+}
+
+.lbl-welcome-outer{
+    -fx-background-color: linear-gradient(to right, #A6A6A6 0%, #404040 100%);
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.lbl-welcome{
+    -fx-font-faOpen : "Open Sans";
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+    -fx-font-style: italic;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.lbl-property{
+    -fx-font-family: "Staatliches";
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+}
+
+.lbl-value{
+    -fx-font-family: "Staatliches";
+    -fx-font-size: 24px;
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+}
+
+.lbl-rides-value{
+    -fx-font-family: "Staatliches";
+    -fx-font-size: 24px;
+    -fx-font-weight: 400;
+    -fx-text-fill: #5c5a5a;
+    -fx-text-alignment: center;
+}

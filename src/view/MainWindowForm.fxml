@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowFormController">
    <children>
       <AnchorPane prefHeight="70.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -31,7 +30,7 @@
          <children>
             <AnchorPane prefHeight="581.0" prefWidth="225.0" styleClass="side-nav-outer" stylesheets="@styles/MainWindow.css" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="25.0">
                <children>
-                  <Button mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Dashboard" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="37.0" />
+                  <Button mnemonicParsing="false" onAction="#dashboardOnAction" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Dashboard" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="37.0" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="89.0" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Employee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="141.0" />
                   <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Training" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="192.0" />
@@ -45,7 +44,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="contextOutlet" layoutX="640.0" layoutY="260.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="70.0" />
+      <AnchorPane fx:id="contextOutlet" layoutX="640.0" layoutY="260.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="72.0" />
       <AnchorPane prefHeight="21.0" prefWidth="200.0" style="-fx-background-color: #3D3D48;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label styleClass="lbl-version" stylesheets="@styles/MainWindow.css" text="Version 1.0.0" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="31.0" />
