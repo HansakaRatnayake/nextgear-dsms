@@ -1,0 +1,29 @@
+/* chart-styles.css */
+
+/* Series 1 color */
+.chart-series-line.series0 {
+    -fx-stroke: #FF5733; /* Set the color for the first series (orange) */
+}
+
+/* Series 2 color */
+.chart-series-line.series1 {
+    -fx-stroke: #33FF57; /* Set the color for the second series (green) */
+}
+
+/* Series 3 color */
+.chart-series-line.series2 {
+    -fx-stroke: #3357FF; /* Set the color for the third series (blue) */
+}
+
+/* Customize symbols (e.g., data points) if needed */
+.chart-line-symbol.series0 {
+    -fx-background-color: #FF5733, white;
+}
+
+.chart-line-symbol.series1 {
+    -fx-background-color: #33FF57, white;
+}
+
+.chart-line-symbol.series2 {
+    -fx-background-color: #3357FF, white;
+}

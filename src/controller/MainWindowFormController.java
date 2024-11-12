@@ -11,6 +11,10 @@ public class MainWindowFormController {
 
     public AnchorPane contextOutlet;
 
+    public void initialize() {
+        dashboardOnAction(new ActionEvent());
+    }
+
     public void dashboardOnAction(ActionEvent actionEvent) {
 
         try {
