@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1280.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowFormController">
    <children>
       <AnchorPane prefHeight="70.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -30,16 +30,16 @@
          <children>
             <AnchorPane prefHeight="581.0" prefWidth="225.0" styleClass="side-nav-outer" stylesheets="@styles/MainWindow.css" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="25.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#dashboardOnAction" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Dashboard" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="37.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="89.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Training" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="141.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Registration" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="192.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Employee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="244.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Schedule" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="295.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Booking" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="347.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Exams" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="451.0" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Payment" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="503.0" />
-                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Vehicle" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="399.0" />
+                  <Button mnemonicParsing="false" onAction="#dashboardOnAction" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Dashboard" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="30.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#traineeOnAction" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Trainee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="82.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Training" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="134.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Registration" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="185.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Employee" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="237.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Schedule" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="288.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Booking" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="340.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Exams" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="444.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Payment" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="496.0" />
+                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" styleClass="main-window-sidenav-btn" stylesheets="@styles/MainWindow.css" text="Vehicle" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="392.0" />
                </children>
             </AnchorPane>
          </children>

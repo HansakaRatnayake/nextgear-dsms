@@ -16,9 +16,16 @@ public class MainWindowFormController {
     }
 
     public void dashboardOnAction(ActionEvent actionEvent) {
+        loadUI("Dashboard");
+    }
 
+    public void traineeOnAction(ActionEvent actionEvent) {
+        loadUI("TraineeManagement");
+    }
+
+    public void loadUI(String context){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/DashboardForm.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/"+context+"Form.fxml"));
             Parent dashboardView = loader.load();
 
             contextOutlet.getChildren().clear();
