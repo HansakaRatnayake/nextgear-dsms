@@ -15,14 +15,14 @@ public class TraineeTM {
      private String mobile;
      private String address;
      private LocalDate dob;
-     private TraineeLevel level;
-     private Gender gender;
+     private String level;
+     private String gender;
      private ButtonBar actions;
 
     public TraineeTM() {
     }
 
-    public TraineeTM(String id, String firstName, String lastName, String email, String nic, String mobile, String address, LocalDate dob, TraineeLevel level, Gender gender, ButtonBar actions) {
+    public TraineeTM(String id, String firstName, String lastName, String email, String nic, String mobile, String address, LocalDate dob, String level, String gender, ButtonBar actions) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -100,19 +100,19 @@ public class TraineeTM {
         this.dob = dob;
     }
 
-    public TraineeLevel getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(TraineeLevel level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

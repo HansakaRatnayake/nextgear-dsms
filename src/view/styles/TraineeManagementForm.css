@@ -95,18 +95,3 @@
 
 }
 
-.table-view{
-    -fx-background-color: #353535;
-    -fx-text-fill: white;
-
-}
-.column{
-    -fx-font-family: "Staatliches";
-    -fx-background-color: #ffffff;
-    -fx-font-weight: 400;
-    -fx-font-size: 12px;
-    -fx-pref-height: 25px;
-    -fx-border-color:#9A9999;
-    -fx-border-width: 0.5px;
-
-}

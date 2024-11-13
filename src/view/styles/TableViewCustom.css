@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+.table-view{
+    -fx-background-color: #353535;
+    -fx-text-fill: white;
+
+}
+.column{
+    -fx-border-color: rgba(73, 71, 71, 0);
+}
+.column.table-cell{
+    -fx-text-fill: white;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+    -fx-border-color: rgb(73, 71, 71);
+    -fx-pref-height: 25px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color:  #FF6A00; /* Hover color for selected rows */
+}
+.table-row-cell{
+    -fx-text-fill: white;
+    -fx-background-color: #353535;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 10px;
+    -fx-font-weight: 600;
+
+
+}
+
+.table-view .column-header{
+    -fx-font-family: "Staatliches";
+    -fx-background-color: #ffffff;
+    -fx-font-weight: 400;
+    -fx-font-size: 12px;
+    -fx-pref-height: 25px;
+    -fx-border-color: rgba(154, 153, 153, 0.38);
+    -fx-border-width: 1px;
+}
+/* Change the track color */
+.table-view .scroll-bar .track {
+    -fx-background-color: #353535;
+    -fx-border-color: #353535;
+}
+
+/* Change the thumb color */
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #454545;
+    -fx-border-color: #454545;
+}
+
+/* Hover effect for the thumb */
+.table-view .scroll-bar .thumb:hover {
+    -fx-background-color: #616161;
+}
+
+/* Buttons on the scrollbar */
+.table-view .scroll-bar .increment-button,
+.table-view .scroll-bar .decrement-button {
+    -fx-background-color: #353535;
+    -fx-border-color: #353535;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.table-view .scroll-bar .increment-button:hover,
+.table-view .scroll-bar .decrement-button:hover {
+    -fx-background-color: #616161;
+}
+
+.button{
+   -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+}
+
+.button:hover{
+    -fx-cursor: hand;
+
+}
+
+.btn-update{
+    -fx-background-color: #1E386F;
+}
+.btn-delete{
+    -fx-background-color: #CB0D0D;
+}

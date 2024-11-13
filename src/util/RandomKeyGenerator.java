@@ -11,7 +11,7 @@ public class RandomKeyGenerator {
     }
 
 
-    public static String keyGenerator(Character startCharacter) {
+    private static String keyGenerator(Character startCharacter) {
 
         Random random = new Random();
 

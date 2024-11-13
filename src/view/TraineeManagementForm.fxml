@@ -45,21 +45,24 @@
             </children>
         </AnchorPane>
         <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
-        <Button layoutX="778.0" layoutY="279.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Create" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="261.0" />
+        <Button fx:id="btnCreate" layoutX="778.0" layoutY="279.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Create" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="261.0" />
         <Button layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/TraineeManagementForm.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
         <TextField fx:id="txtSearch" layoutX="81.0" layoutY="376.0" promptText="Search" stylesheets="@styles/TraineeManagementForm.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="338.0" />
-        <TableView fx:id="tblTrainee" layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TraineeManagementForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="406.0">
+        <TableView fx:id="tblTrainee" layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TableViewCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="406.0">
             <columns>
-                <TableColumn fx:id="colFName" prefWidth="75.0" styleClass="column" text="fname" />
-                <TableColumn fx:id="colLName" prefWidth="75.0" styleClass="column" text="lname" />
-                <TableColumn fx:id="colEmail" prefWidth="75.0" styleClass="column" text="email" />
-                <TableColumn fx:id="colMobile" prefWidth="75.0" styleClass="column" text="mobile" />
-                <TableColumn fx:id="colNic" prefWidth="75.0" styleClass="column" text="nic" />
-                <TableColumn fx:id="colDob" prefWidth="75.0" styleClass="column" text="dob" />
-                <TableColumn fx:id="colAddress" prefWidth="75.0" styleClass="column" text="address" />
-                <TableColumn fx:id="colGender" prefWidth="87.0" styleClass="column" text="Gender" />
-                <TableColumn fx:id="colActions" prefWidth="214.0" styleClass="column" text="Actions" />
+                <TableColumn fx:id="colId" prefWidth="69.0" styleClass="column" text="ID" />
+                <TableColumn fx:id="colFName" prefWidth="62.0" styleClass="column" text="fname" />
+                <TableColumn fx:id="colLName" prefWidth="60.0" styleClass="column" text="lname" />
+                <TableColumn fx:id="colEmail" prefWidth="71.0" styleClass="column" text="email" />
+                <TableColumn fx:id="colMobile" prefWidth="63.0" styleClass="column" text="mobile" />
+                <TableColumn fx:id="colNic" prefWidth="74.0" styleClass="column" text="nic" />
+                <TableColumn fx:id="colDob" prefWidth="54.0" styleClass="column" text="dob" />
+                <TableColumn fx:id="colAddress" prefWidth="76.0" styleClass="column" text="address" />
+                <TableColumn fx:id="colGender" prefWidth="74.0" styleClass="column" text="Gender" />
+                <TableColumn fx:id="colLevel" prefWidth="74.0" styleClass="column" text="Level" />
+                <TableColumn fx:id="colActions" prefWidth="149.0" styleClass="column" text="Actions" />
             </columns>
         </TableView>
+      <Button fx:id="btnAddNewTrainee" layoutX="678.0" layoutY="307.0" mnemonicParsing="false" onAction="#addNewTraineeOnAction" prefWidth="217.0" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" visible="false" AnchorPane.leftAnchor="678.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="307.0" />
     </children>
 </AnchorPane>
