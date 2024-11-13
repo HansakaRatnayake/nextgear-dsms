@@ -4,22 +4,20 @@ import DB.Database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import model.Gender;
-import model.Supportive;
 import model.Trainee;
 import model.TraineeLevel;
+import util.ErrorHandler;
 import util.FormController;
 import util.RandomKeyGenerator;
 import view.tm.TraineeTM;
 
-import java.util.Date;
-import java.util.List;
+
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 public class TraineeManagementFormController {
@@ -106,6 +104,15 @@ public class TraineeManagementFormController {
                 btnAddNewTrainee.setVisible(true);
             });
 
+            btnDelete.setOnAction(event -> {
+                Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure to delete trainee " + trainee.getFirstName() + " " + trainee.getLastName() + "?", ButtonType.YES).showAndWait();
+                if (buttonType.get() == ButtonType.YES) {
+                    Database.trainees.remove(trainee);
+                    loadTraineeTableData();
+
+                }
+            });
+
             obList.add(new TraineeTM(
                     trainee.getId(),
                     trainee.getFirstName(),
@@ -143,31 +150,78 @@ public class TraineeManagementFormController {
 
         } else {
 
-            Database.trainees.add(
-                    new Trainee(
-                            txtid.getText(),
-                            txtFirstName.getText(),
-                            txtLastName.getText(),
-                            txtEmail.getText(),
-                            txtNic.getText(),
-                            txtMobile.getText(),
-                            txtAddress.getText(),
-                            txtDob.getValue(),
-                            cmbExperience.getSelectionModel().getSelectedItem(),
-                            cmbGender.getSelectionModel().getSelectedItem()
-
-                    )
+            Trainee newTraineeDetailObj = new Trainee(
+                    txtid.getText(),
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    txtEmail.getText(),
+                    txtNic.getText(),
+                    txtMobile.getText(),
+                    txtAddress.getText(),
+                    txtDob.getValue(),
+                    cmbExperience.getSelectionModel().getSelectedItem(),
+                    cmbGender.getSelectionModel().getSelectedItem()
             );
 
-            new Alert(Alert.AlertType.INFORMATION, "Trainee created successfully!", ButtonType.OK).showAndWait();
-            FormController.clearForm(gridPane);
-            loadTraineeTableData();
-        }
+            if (btnCreate.getText().equals("Update")) {
+                update(newTraineeDetailObj);
+                loadTraineeTableData();
+            } else {
 
+                save(newTraineeDetailObj);
+                loadTraineeTableData();
+
+            }
+        }
+    }
+
+    private void save(Trainee trainee) {
+        ErrorHandler errorHandler = checkErrors(trainee);
+
+        if (errorHandler.getStatus()) {
+            new Alert(Alert.AlertType.ERROR, errorHandler.getErrors().toString(), ButtonType.OK).show();
+        } else {
+            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure to add  trainee " + trainee.getFirstName() + " " + trainee.getLastName() + " ?", ButtonType.OK, ButtonType.CANCEL).showAndWait();
+
+            if (buttonType.get() == ButtonType.OK) {
+                Database.trainees.add(trainee);
+                new Alert(Alert.AlertType.INFORMATION, "Trainee successfully created!", ButtonType.OK).show();
+                FormController.clearForm(gridPane);
+            }
+        }
+    }
+
+    private void update(Trainee trainee) {
+        ErrorHandler errorHandler = checkErrors(trainee);
+
+        if (errorHandler.getStatus()) {
+            new Alert(Alert.AlertType.ERROR, errorHandler.getErrors().toString(), ButtonType.OK).show();
+        } else {
+            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure to update data of trainee " + trainee.getFirstName() + " ?", ButtonType.OK, ButtonType.CANCEL).showAndWait();
+
+            if (buttonType.get() == ButtonType.OK) {
+                Trainee selectedTrainee = Database.trainees.get(IntStream.range(0, Database.trainees.size()).filter(i -> Database.trainees.get(i).getId().equals(trainee.getId())).findFirst().orElseThrow(() -> new RuntimeException("Trainee Not Found")));
+                selectedTrainee.setFirstName(trainee.getFirstName());
+                selectedTrainee.setLastName(trainee.getLastName());
+                selectedTrainee.setEmail(trainee.getEmail());
+                selectedTrainee.setMobile(trainee.getMobile());
+                selectedTrainee.setNic(trainee.getNic());
+                selectedTrainee.setAddress(trainee.getAddress());
+                selectedTrainee.setDob(trainee.getDob());
+                selectedTrainee.setLevel(trainee.getLevel());
+                selectedTrainee.setGender(trainee.getGender());
+
+                new Alert(Alert.AlertType.INFORMATION, "Update Successfully Completed", ButtonType.OK).showAndWait();
+                addNewTraineeOnAction(new ActionEvent());
+            }
+
+        }
     }
 
     public void resetOnAction(ActionEvent actionEvent) {
+        String id = txtid.getText();
         FormController.clearForm(gridPane);
+        txtid.setText(id);
     }
 
     private void loadExperienceLevel() {
@@ -184,6 +238,40 @@ public class TraineeManagementFormController {
         btnCreate.setStyle("-fx-background-color:#FF6A00; -fx-text-fill: white;");
         btnAddNewTrainee.setVisible(false);
         FormController.clearForm(gridPane);
+        txtid.setText(RandomKeyGenerator.generateTraineeId());
 
+    }
+
+    private ErrorHandler checkErrors(Trainee trainee) {
+        StringBuilder error = new StringBuilder();
+        boolean isUpdate = false;
+
+        for (Trainee tr : Database.trainees) {
+            if (tr.getId().equals(trainee.getId())) {
+                isUpdate = true;
+                for (Trainee temp : Database.trainees) {
+                    if (!(trainee.getId().equals(temp.getId())) && trainee.getNic().equals(temp.getNic()))
+                        error.append("NIC already exits\n");
+                    if (!(trainee.getId().equals(temp.getId())) && trainee.getEmail().equals(temp.getEmail()))
+                        error.append("E-mail already exits\n");
+                    if (!(trainee.getId().equals(temp.getId())) && trainee.getMobile().equals(temp.getMobile()))
+                        error.append("Mobile already exits");
+                }
+                break;
+            }
+        }
+
+        if (!isUpdate) {
+            for (Trainee temp : Database.trainees) {
+                if (trainee.getNic().equals(temp.getNic()))
+                    error.append("NIC already exits\n");
+                if (trainee.getEmail().equals(temp.getEmail()))
+                    error.append("E-mail already exits\n");
+                if (trainee.getMobile().equals(temp.getMobile()))
+                    error.append("Mobile already exits");
+            }
+        }
+
+        return new ErrorHandler(error, error.length() > 0);
     }
 }
