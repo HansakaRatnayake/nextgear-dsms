@@ -26,6 +26,10 @@
     -fx-text-fill: white!important;
 }
 
+.txt-id{
+    -fx-font-style: italic;
+}
+
 .combo-box{
     -fx-padding: 0 5px 0 5px;
 }
@@ -46,7 +50,7 @@
 
 /* combo-box selected text */
 .combo-box .list-view .list-cell:focused {
-    -fx-background-color : #5F9EA0;  /* Cadet Blue */
+    -fx-background-color : #fb7c25;  /* Cadet Blue */
     -fx-text-fill: rgba(255, 255, 255, 0.73);
     -fx-font-family: "Open Sans"!important;
 
@@ -54,7 +58,7 @@
 
 /* combo-box hover text */
 .combo-box .list-view .list-cell:hover {
-    -fx-background-color : #5F9EA0;  /* Cadet Blue */
+    -fx-background-color : #fb7c25;  /* Cadet Blue */
     -fx-text-fill: rgba(255, 255, 255, 0.73);
     -fx-font-family: "Open Sans"!important;
 

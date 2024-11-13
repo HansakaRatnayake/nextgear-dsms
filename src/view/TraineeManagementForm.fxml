@@ -13,53 +13,53 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane fx:id="TraineeContext" prefHeight="606.0" prefWidth="959.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TraineeManagementFormController">
-   <children>
-      <Label layoutX="25.0" layoutY="41.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
-      <AnchorPane layoutY="7.0" prefHeight="229.0" prefWidth="959.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="64.0">
-         <children>
-            <GridPane prefHeight="228.0" prefWidth="959.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <columnConstraints>
-                <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
-                <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
-                  <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <TextField promptText="ID" stylesheets="@styles/TraineeManagementForm.css" />
-                  <TextField promptText="First Name" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="1" />
-                  <TextField promptText="Last Name" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" />
-                  <TextField promptText="Email" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="1" />
-                  <TextField promptText="Mobile" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField promptText="Nic" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField promptText="Address" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="2" />
-                  <ComboBox prefWidth="321.0" promptText="Experience" styleClass="combo-box" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <DatePicker prefHeight="50.0" prefWidth="345.0" promptText="Date of Birth" styleClass="date-picker" stylesheets="@styles/DatePickerCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ComboBox prefWidth="150.0" promptText="Gender" styleClass="combo-box" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="3" />
-               </children>
-            </GridPane>
-         </children>
-      </AnchorPane>
-      <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Trainee Details" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
-      <Button layoutX="778.0" layoutY="279.0" mnemonicParsing="false" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Create" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="261.0" />
-      <Button layoutX="788.0" layoutY="289.0" mnemonicParsing="false" styleClass="btn-reset" stylesheets="@styles/TraineeManagementForm.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
-      <TextField layoutX="81.0" layoutY="376.0" promptText="Search" stylesheets="@styles/TraineeManagementForm.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="338.0" />
-      <TableView layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TraineeManagementForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="406.0">
-        <columns>
-          <TableColumn prefWidth="75.0" styleClass="column" text="fname" />
-          <TableColumn prefWidth="75.0" styleClass="column" text="lname" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="email" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="mobile" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="nic" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="dob" />
-            <TableColumn prefWidth="75.0" styleClass="column" text="address" />
-            <TableColumn prefWidth="87.0" styleClass="column" text="Gender" />
-            <TableColumn prefWidth="214.0" styleClass="column" text="Actions" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <Label layoutX="25.0" layoutY="41.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
+        <AnchorPane layoutY="7.0" prefHeight="229.0" prefWidth="959.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="64.0">
+            <children>
+                <GridPane fx:id="gridPane" prefHeight="228.0" prefWidth="959.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                        <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="txtid" editable="false" promptText="ID" styleClass="txt-id" stylesheets="@styles/TraineeManagementForm.css" />
+                        <TextField fx:id="txtFirstName" promptText="First Name" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtLastName" promptText="Last Name" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" />
+                        <TextField fx:id="txtEmail" promptText="Email" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtMobile" promptText="Mobile" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtNic" promptText="Nic" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtAddress" promptText="Address" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cmbExperience" prefWidth="321.0" promptText="Experience" styleClass="combo-box" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="txtDob" prefHeight="50.0" prefWidth="345.0" promptText="Date of Birth" styleClass="date-picker" stylesheets="@styles/DatePickerCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cmbGender" prefWidth="150.0" promptText="Gender" styleClass="combo-box" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="3" />
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+        <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
+        <Button layoutX="778.0" layoutY="279.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Create" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="261.0" />
+        <Button layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/TraineeManagementForm.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
+        <TextField fx:id="txtSearch" layoutX="81.0" layoutY="376.0" promptText="Search" stylesheets="@styles/TraineeManagementForm.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="338.0" />
+        <TableView fx:id="tblTrainee" layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TraineeManagementForm.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="406.0">
+            <columns>
+                <TableColumn fx:id="colFName" prefWidth="75.0" styleClass="column" text="fname" />
+                <TableColumn fx:id="colLName" prefWidth="75.0" styleClass="column" text="lname" />
+                <TableColumn fx:id="colEmail" prefWidth="75.0" styleClass="column" text="email" />
+                <TableColumn fx:id="colMobile" prefWidth="75.0" styleClass="column" text="mobile" />
+                <TableColumn fx:id="colNic" prefWidth="75.0" styleClass="column" text="nic" />
+                <TableColumn fx:id="colDob" prefWidth="75.0" styleClass="column" text="dob" />
+                <TableColumn fx:id="colAddress" prefWidth="75.0" styleClass="column" text="address" />
+                <TableColumn fx:id="colGender" prefWidth="87.0" styleClass="column" text="Gender" />
+                <TableColumn fx:id="colActions" prefWidth="214.0" styleClass="column" text="Actions" />
+            </columns>
+        </TableView>
+    </children>
 </AnchorPane>
