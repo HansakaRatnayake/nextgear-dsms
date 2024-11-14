@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+.card{
+    -fx-pref-width:215px;
+    -fx-pref-height: 310px;
+    -fx-background-color: #353535;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+
+}
+
+.card:hover{
+    -fx-background-color: #434242;
+    -fx-cursor: hand;
+    -fx-border-color: #FF6A00;
+    -fx-border-width: 1px;
+    -fx-border-radius: 15px;
+}
+
+.label{
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}

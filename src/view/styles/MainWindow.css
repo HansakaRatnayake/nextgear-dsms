@@ -14,21 +14,26 @@
     -fx-pref-height: 42px;
     -fx-border-radius: 6px;
     -fx-background-radius: 6px;
-    -fx-background-color: #474747;
+    -fx-background-color: #3e3d3d;
     -fx-border-color: #FF6A00;
     -fx-border-width: 1px;
-    -fx-text-fill: #FF6A00;
+    -fx-text-fill:#FF6A00;
     -fx-font-weight: 700;
     -fx-font-family: "Open Sans";
-    -fx-font-size: 14px;
+    -fx-font-size: 12px;
+
+}
+
+.main-window-sidenav-btn:focused{
+    -fx-background-color:#FF6A00;
+    -fx-text-fill: white;
 
 }
 
 .main-window-sidenav-btn:hover{
     -fx-cursor: hand;
     -fx-background-color: #333131;
-    -fx-border-color: white;
-    -fx-text-fill: #ffffff;
+
 }
 
 .lbl-next{
