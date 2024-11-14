@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+
+.text-field, .combo-box{
+    -fx-font-family: "Open Sans";
+    -fx-pref-width: 258px;
+    -fx-pref-height: 50px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #5F5D5D;
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-border-width: 1px;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-padding: 0 13px 0 13px;
+    -fx-text-fill: white!important;
+}
+
+.combo-box{
+    -fx-padding: 0 5px 0 5px;
+}
+
+/* outer combo-box text */
+.combo-box .list-cell {
+    -fx-font-family: "Open Sans"!important;
+    -fx-text-fill: rgba(255, 255, 255, 0.73);
+}
+
+/* combo-box list view text, not hovered or focused */
+.combo-box .list-view .list-cell {
+    -fx-font-family: "Open Sans"!important;
+    -fx-text-fill: black;
+}
+
+/* combo-box selected text */
+.combo-box .list-view .list-cell:focused {
+    -fx-background-color : #fb7c25;  /* Cadet Blue */
+    -fx-text-fill: rgba(255, 255, 255, 0.73);
+    -fx-font-family: "Open Sans"!important;
+
+}
+
+/* combo-box hover text */
+.combo-box .list-view .list-cell:hover {
+    -fx-background-color : #fb7c25;  /* Cadet Blue */
+    -fx-text-fill: rgba(255, 255, 255, 0.73);
+    -fx-font-family: "Open Sans"!important;
+
+}

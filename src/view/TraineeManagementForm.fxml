@@ -37,9 +37,9 @@
                         <TextField fx:id="txtMobile" promptText="Mobile" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="txtNic" promptText="Nic" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <TextField fx:id="txtAddress" promptText="Address" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cmbExperience" prefWidth="321.0" promptText="Experience" styleClass="combo-box" stylesheets="@styles/TraineeManagementForm.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cmbExperience" prefWidth="321.0" promptText="Experience" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                         <DatePicker fx:id="txtDob" prefHeight="50.0" prefWidth="345.0" promptText="Date of Birth" styleClass="date-picker" stylesheets="@styles/DatePickerCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cmbGender" prefWidth="150.0" promptText="Gender" styleClass="combo-box" stylesheets="@styles/TraineeManagementForm.css" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cmbGender" prefWidth="150.0" promptText="Gender" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
             </children>

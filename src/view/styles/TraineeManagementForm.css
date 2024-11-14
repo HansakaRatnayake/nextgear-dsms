@@ -11,7 +11,7 @@
 
 }
 
-.text-field, .combo-box{
+.text-field{
     -fx-font-family: "Open Sans";
     -fx-pref-width: 258px;
     -fx-pref-height: 50px;
@@ -30,39 +30,9 @@
     -fx-font-style: italic;
 }
 
-.combo-box{
-    -fx-padding: 0 5px 0 5px;
-}
 
 
 
-/* outer combo-box text */
-.combo-box .list-cell {
-    -fx-font-family: "Open Sans"!important;
-    -fx-text-fill: rgba(255, 255, 255, 0.73);
-}
-
-/* combo-box list view text, not hovered or focused */
-.combo-box .list-view .list-cell {
-    -fx-font-family: "Open Sans"!important;
-    -fx-text-fill: black;
-}
-
-/* combo-box selected text */
-.combo-box .list-view .list-cell:focused {
-    -fx-background-color : #fb7c25;  /* Cadet Blue */
-    -fx-text-fill: rgba(255, 255, 255, 0.73);
-    -fx-font-family: "Open Sans"!important;
-
-}
-
-/* combo-box hover text */
-.combo-box .list-view .list-cell:hover {
-    -fx-background-color : #fb7c25;  /* Cadet Blue */
-    -fx-text-fill: rgba(255, 255, 255, 0.73);
-    -fx-font-family: "Open Sans"!important;
-
-}
 
 .button{
     -fx-pref-width: 104px;

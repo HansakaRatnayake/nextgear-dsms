@@ -76,6 +76,8 @@ public class TraineeManagementFormController {
     private void loadTraineeTableData() {
         ObservableList<TraineeTM> obList = FXCollections.observableArrayList();
 
+//        Database.trainees.stream().filter(t->t.getId().equals(searchText) || t.getFirstName().equals(searchText) || t.getLastName().equals(searchText) || t.getEmail().equals(searchText) || t.getMobile().equals(searchText) || t.getNic().equals(searchText));
+
         for (Trainee trainee : Database.trainees) {
             Button btnUpdate = new Button("Update");
             Button btnDelete = new Button("Delete");
