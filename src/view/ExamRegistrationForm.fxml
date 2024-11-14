@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<AnchorPane prefHeight="606.0" prefWidth="959.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExamRegistrationFormController">
+   <children>
+      <Label layoutX="59.0" layoutY="61.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="new Exam Registration" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <AnchorPane layoutX="10.0" layoutY="17.0" prefHeight="229.0" prefWidth="959.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="64.0">
+         <children>
+            <GridPane fx:id="gridPane" prefHeight="228.0" prefWidth="959.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                  <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                  <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="txtid" editable="false" promptText="Exam Number" stylesheets="@styles/TextFieldCustom.css" />
+                  <ComboBox fx:id="cmbExperience" prefWidth="321.0" promptText="Trainee" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="cmbExperience1" layoutX="296.0" layoutY="14.0" prefWidth="321.0" promptText="Exam Type" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="2" />
+                  <ComboBox fx:id="cmbExperience11" layoutX="581.0" layoutY="14.0" prefWidth="321.0" promptText="Vehicle type" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cmbExperience111" layoutX="10.0" layoutY="71.0" prefWidth="321.0" promptText="Category" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cmbExperience1111" layoutX="296.0" layoutY="71.0" prefWidth="321.0" promptText="Exam" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="798.0" layoutY="299.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/ButtonCustom.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
+      <Button fx:id="btnCreate" layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/ButtonCustom.css" text="Create" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="261.0" />
+      <Label layoutX="32.0" layoutY="291.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Exam Registaraion details" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
+      <TextField fx:id="txtSearch" layoutX="91.0" layoutY="386.0" promptText="Search" stylesheets="@styles/TextFieldCustom.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="336.0" />
+      <TableView fx:id="tblTrainee" layoutX="38.0" layoutY="383.0" prefHeight="200.0" prefWidth="897.0" stylesheets="@styles/TableViewCustom.css" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="406.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="69.0" styleClass="column" text="Exam No" />
+            <TableColumn fx:id="colFName" prefWidth="62.0" styleClass="column" text="Trainee" />
+            <TableColumn fx:id="colLName" prefWidth="89.33334350585938" styleClass="column" text="Exam Type" />
+            <TableColumn fx:id="colEmail" prefWidth="76.66668701171875" styleClass="column" text="Exam" />
+            <TableColumn fx:id="colMobile" prefWidth="72.33331298828125" styleClass="column" text="Date" />
+            <TableColumn fx:id="colNic" prefWidth="156.0" styleClass="column" text="From" />
+            <TableColumn fx:id="colDob" prefWidth="162.66665649414062" styleClass="column" text="To" />
+            <TableColumn fx:id="colAddress" prefWidth="208.66665649414062" styleClass="column" text="options" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
