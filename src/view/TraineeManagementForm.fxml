@@ -14,8 +14,8 @@
 
 <AnchorPane fx:id="TraineeContext" prefHeight="606.0" prefWidth="959.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TraineeManagementFormController">
     <children>
-        <Label layoutX="25.0" layoutY="41.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
-        <AnchorPane layoutY="7.0" prefHeight="229.0" prefWidth="959.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="64.0">
+        <Label layoutX="25.0" layoutY="41.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
+        <AnchorPane layoutY="7.0" prefHeight="229.0" prefWidth="959.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="64.0">
             <children>
                 <GridPane fx:id="gridPane" prefHeight="228.0" prefWidth="959.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
@@ -37,18 +37,18 @@
                         <TextField fx:id="txtMobile" promptText="Mobile" stylesheets="@styles/TextFieldCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="txtNic" promptText="Nic" stylesheets="@styles/TextFieldCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <TextField fx:id="txtAddress" promptText="Address" stylesheets="@styles/TextFieldCustom.css" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cmbExperience" prefWidth="321.0" promptText="Experience" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cmbExperience" prefWidth="321.0" promptText="Select Experience" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                         <DatePicker fx:id="txtDob" prefHeight="50.0" prefWidth="345.0" promptText="Date of Birth" styleClass="date-picker" stylesheets="@styles/DatePickerCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cmbGender" prefWidth="150.0" promptText="Gender" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cmbGender" prefWidth="150.0" promptText="Select Gender" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.rowIndex="3" />
                     </children>
                 </GridPane>
             </children>
         </AnchorPane>
-        <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
-        <Button fx:id="btnCreate" layoutX="778.0" layoutY="279.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Create" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="261.0" />
-        <Button layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/TraineeManagementForm.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
+        <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
+        <Button fx:id="btnCreate" layoutX="778.0" layoutY="279.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/ButtonCustom.css" text="Create" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="261.0" />
+        <Button layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/ButtonCustom.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
         <TextField fx:id="txtSearch" layoutX="81.0" layoutY="376.0" promptText="Search" stylesheets="@styles/TextFieldCustom.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="338.0" />
-        <TableView fx:id="tblTrainee" layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TableViewCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="406.0">
+        <TableView fx:id="tblTrainee" layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TableViewCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="406.0">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="69.0" styleClass="column" text="ID" />
                 <TableColumn fx:id="colFName" prefWidth="62.0" styleClass="column" text="fname" />

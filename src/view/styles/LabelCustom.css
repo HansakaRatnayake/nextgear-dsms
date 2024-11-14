@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Staatliches';
+    src: url('../assets/fonts/Staatliches/Staatliches-Regular.ttf');
+}
+
+.lbl-heading{
+    -fx-font-family: 'Staatliches';
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-text-fill: white;
+}

@@ -1,0 +1,29 @@
+.button{
+    -fx-pref-width: 104px;
+    -fx-pref-height: 37px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: white;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.btn-create{
+    -fx-background-color: #FF6A00;
+}
+.btn-create:hover{
+    -fx-background-color: #fb7c25;
+    -fx-cursor: hand;
+}
+
+.btn-reset{
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-border-color: #FF6A00;
+}
+.btn-reset:hover{
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: #ff0000;
+    -fx-text-fill: #ff0000;
+    -fx-cursor: hand;
+}
