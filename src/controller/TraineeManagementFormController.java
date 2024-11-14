@@ -17,13 +17,13 @@ import util.RandomKeyGenerator;
 import view.tm.TraineeTM;
 
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class TraineeManagementFormController {
     public AnchorPane TraineeContext;
-
-
     public TextField txtid;
     public TextField txtFirstName;
     public TextField txtLastName;
@@ -50,7 +50,14 @@ public class TraineeManagementFormController {
     public TableColumn colLevel;
     public Button btnCreate;
     public Button btnAddNewTrainee;
+    public ComboBox<TraineeLevel> cmbSearchExperience;
+    public ComboBox<Gender> cmbSearchGender;
 
+    StringBuilder searchText = new StringBuilder();
+    StringBuilder searchGender = new StringBuilder();
+    StringBuilder searchLevel = new StringBuilder();
+
+    String queryParam = "searchText=" + searchText + "&gender=" + searchGender + "&level=" + searchLevel;
 
     public void initialize() {
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -65,91 +72,22 @@ public class TraineeManagementFormController {
         colLevel.setCellValueFactory(new PropertyValueFactory<>("level"));
         colActions.setCellValueFactory(new PropertyValueFactory<>("actions"));
 
+
         txtid.setText(RandomKeyGenerator.generateTraineeId());
         loadGenders();
         loadExperienceLevel();
-        loadTraineeTableData();
+        addListeners();
+        loadTraineeTableData(queryParam);
 
     }
-
-
-    private void loadTraineeTableData() {
-        ObservableList<TraineeTM> obList = FXCollections.observableArrayList();
-
-//        Database.trainees.stream().filter(t->t.getId().equals(searchText) || t.getFirstName().equals(searchText) || t.getLastName().equals(searchText) || t.getEmail().equals(searchText) || t.getMobile().equals(searchText) || t.getNic().equals(searchText));
-
-        for (Trainee trainee : Database.trainees) {
-            Button btnUpdate = new Button("Update");
-            Button btnDelete = new Button("Delete");
-
-            btnUpdate.setStyle("-fx-background-color:#1E386F; -fx-text-fill: white;");
-            btnDelete.setStyle("-fx-background-color:#CB0D0D; -fx-text-fill: white;");
-
-            ButtonBar buttonBar = new ButtonBar();
-            buttonBar.getButtons().addAll(btnUpdate, btnDelete);
-
-
-            btnUpdate.setOnAction(event -> {
-                txtid.setText(trainee.getId());
-                txtFirstName.setText(trainee.getFirstName());
-                txtLastName.setText(trainee.getLastName());
-                txtEmail.setText(trainee.getEmail());
-                txtMobile.setText(trainee.getMobile());
-                txtNic.setText(trainee.getNic());
-                txtAddress.setText(trainee.getAddress());
-                cmbGender.getSelectionModel().select(IntStream.range(0, cmbGender.getItems().size()).filter(i -> cmbGender.getItems().get(i).getName().equals(trainee.getGender().getName())).findFirst().orElseThrow(() -> new RuntimeException("Gender Not Found")));
-                cmbExperience.getSelectionModel().select(IntStream.range(0, cmbExperience.getItems().size()).filter(i -> cmbExperience.getItems().get(i).getName().equals(trainee.getLevel().getName())).findFirst().orElseThrow(() -> new RuntimeException("Level Not Found")));
-                txtDob.setValue(trainee.getDob());
-
-                btnCreate.setText("Update");
-                btnCreate.setStyle("-fx-background-color:#0612ec; -fx-text-fill: white;");
-                btnAddNewTrainee.setVisible(true);
-            });
-
-            btnDelete.setOnAction(event -> {
-                Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure to delete trainee " + trainee.getFirstName() + " " + trainee.getLastName() + "?", ButtonType.YES).showAndWait();
-                if (buttonType.get() == ButtonType.YES) {
-                    Database.trainees.remove(trainee);
-                    loadTraineeTableData();
-
-                }
-            });
-
-            obList.add(new TraineeTM(
-                    trainee.getId(),
-                    trainee.getFirstName(),
-                    trainee.getLastName(),
-                    trainee.getEmail(),
-                    trainee.getNic(),
-                    trainee.getMobile(),
-                    trainee.getAddress(),
-                    trainee.getDob(),
-                    trainee.getLevel().getName(),
-                    trainee.getGender().getName(),
-                    buttonBar
-            ));
-
-
-            tblTrainee.setItems(obList);
-        }
-    }
-
 
     public void createOnAction(ActionEvent actionEvent) {
         if (
-                txtFirstName.getText().isEmpty() ||
-                        txtLastName.getText().isEmpty() ||
-                        txtEmail.getText().isEmpty() ||
-                        txtMobile.getText().isEmpty() ||
-                        txtNic.getText().isEmpty() ||
-                        txtAddress.getText().isEmpty() ||
-                        txtDob.getValue() == null ||
-                        cmbExperience.getSelectionModel().isEmpty() ||
-                        cmbGender.getSelectionModel().isEmpty()
+                txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() || txtEmail.getText().isEmpty() ||
+                        txtMobile.getText().isEmpty() || txtNic.getText().isEmpty() || txtAddress.getText().isEmpty() ||
+                        txtDob.getValue() == null || cmbExperience.getSelectionModel().isEmpty() || cmbGender.getSelectionModel().isEmpty()
         ) {
-
             new Alert(Alert.AlertType.ERROR, "Please fill all the required fields!", ButtonType.CANCEL, ButtonType.OK).show();
-
         } else {
 
             Trainee newTraineeDetailObj = new Trainee(
@@ -167,15 +105,163 @@ public class TraineeManagementFormController {
 
             if (btnCreate.getText().equals("Update")) {
                 update(newTraineeDetailObj);
-                loadTraineeTableData();
+                loadTraineeTableData(queryParam);
             } else {
 
                 save(newTraineeDetailObj);
-                loadTraineeTableData();
+                txtid.setText(RandomKeyGenerator.generateTraineeId());
+                loadTraineeTableData(queryParam);
 
             }
         }
     }
+
+
+    public void addNewTraineeOnAction(ActionEvent actionEvent) {
+        btnCreate.setText("Create");
+        btnCreate.setStyle("-fx-background-color:#FF6A00; -fx-text-fill: white;");
+        btnAddNewTrainee.setVisible(false);
+        FormController.clearForm(gridPane);
+        txtid.setText(RandomKeyGenerator.generateTraineeId());
+
+    }
+
+
+    public void resetOnAction(ActionEvent actionEvent) {
+        String id = txtid.getText();
+        FormController.clearForm(gridPane);
+        txtid.setText(id);
+    }
+
+    public void resetFilterOnAction(ActionEvent actionEvent) {
+        txtSearch.clear();
+        cmbSearchExperience.getSelectionModel().clearSelection();
+        cmbSearchGender.getSelectionModel().clearSelection();
+        searchText.setLength(0);
+        searchGender.setLength(0);
+        searchLevel.setLength(0);
+
+    }
+
+
+    ObservableList<TraineeTM> obList = FXCollections.observableArrayList();
+
+    private void loadTraineeTableData(String searchText) {
+        obList.clear();
+        List<Trainee> filteredTrainees = Database.trainees;
+
+
+        String[] pairs = searchText.split("&");
+        for (String pair : pairs) {
+            String[] keyValue = pair.split("=");
+
+            if (keyValue[0].equals("searchText") && keyValue.length == 2) {
+                filteredTrainees = filteredTrainees.stream().filter(t -> t.getId().contains(keyValue[1]) || t.getFirstName().contains(keyValue[1]) || t.getLastName().contains(keyValue[1]) || t.getEmail().contains(keyValue[1]) || t.getMobile().contains(keyValue[1]) || t.getNic().contains(keyValue[1])).collect(Collectors.toList());
+            }
+            if (keyValue[0].equals("gender") && keyValue.length == 2) {
+                filteredTrainees = filteredTrainees.stream().filter(t -> t.getGender().getName().equals(keyValue[1])).collect(Collectors.toList());
+            }
+            if (keyValue[0].equals("level") && keyValue.length == 2) {
+                filteredTrainees = filteredTrainees.stream().filter(t -> t.getLevel().getName().equals(keyValue[1])).collect(Collectors.toList());
+            }
+
+        }
+
+        for (Trainee trainee : filteredTrainees) {
+
+            obList.add(new TraineeTM(
+                    trainee.getId(),
+                    trainee.getFirstName(),
+                    trainee.getLastName(),
+                    trainee.getEmail(),
+                    trainee.getNic(),
+                    trainee.getMobile(),
+                    trainee.getAddress(),
+                    trainee.getDob(),
+                    trainee.getLevel().getName(),
+                    trainee.getGender().getName(),
+                    createActionButtons(trainee)
+            ));
+
+            tblTrainee.setItems(obList);
+        }
+    }
+
+    private ButtonBar createActionButtons(Trainee trainee) {
+        Button btnUpdate = new Button("Update");
+        Button btnDelete = new Button("Delete");
+
+        btnUpdate.setStyle("-fx-background-color:#1E386F; -fx-text-fill: white;");
+        btnDelete.setStyle("-fx-background-color:#CB0D0D; -fx-text-fill: white;");
+
+        btnUpdate.setOnAction(event -> loadTraineeDataToForm(trainee));
+        btnDelete.setOnAction(event -> handleDeleteTrainee(trainee));
+
+        ButtonBar buttonBar = new ButtonBar();
+        buttonBar.getButtons().addAll(btnUpdate, btnDelete);
+        return buttonBar;
+    }
+
+    private void handleDeleteTrainee(Trainee trainee) {
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure to delete trainee " + trainee.getFirstName() + " " + trainee.getLastName() + "?", ButtonType.YES).showAndWait();
+        if (buttonType.get() == ButtonType.YES) {
+            Database.trainees.remove(trainee);
+            loadTraineeTableData(queryParam);
+
+        }
+    }
+
+    private void loadTraineeDataToForm(Trainee trainee) {
+
+        txtid.setText(trainee.getId());
+        txtFirstName.setText(trainee.getFirstName());
+        txtLastName.setText(trainee.getLastName());
+        txtEmail.setText(trainee.getEmail());
+        txtMobile.setText(trainee.getMobile());
+        txtNic.setText(trainee.getNic());
+        txtAddress.setText(trainee.getAddress());
+        cmbGender.getSelectionModel().select(IntStream.range(0, cmbGender.getItems().size()).filter(i -> cmbGender.getItems().get(i).getName().equals(trainee.getGender().getName())).findFirst().orElseThrow(() -> new RuntimeException("Gender Not Found")));
+        cmbExperience.getSelectionModel().select(IntStream.range(0, cmbExperience.getItems().size()).filter(i -> cmbExperience.getItems().get(i).getName().equals(trainee.getLevel().getName())).findFirst().orElseThrow(() -> new RuntimeException("Level Not Found")));
+        txtDob.setValue(trainee.getDob());
+
+        btnCreate.setText("Update");
+        btnCreate.setStyle("-fx-background-color:#0612ec; -fx-text-fill: white;");
+        btnAddNewTrainee.setVisible(true);
+    }
+
+    private ErrorHandler checkErrors(Trainee trainee) {
+        StringBuilder error = new StringBuilder();
+        boolean isUpdate = false;
+
+        for (Trainee tr : Database.trainees) {
+            if (tr.getId().equals(trainee.getId())) {
+                isUpdate = true;
+                for (Trainee temp : Database.trainees) {
+                    if (!(trainee.getId().equals(temp.getId())) && trainee.getNic().equals(temp.getNic()))
+                        error.append("NIC already exits\n");
+                    if (!(trainee.getId().equals(temp.getId())) && trainee.getEmail().equals(temp.getEmail()))
+                        error.append("E-mail already exits\n");
+                    if (!(trainee.getId().equals(temp.getId())) && trainee.getMobile().equals(temp.getMobile()))
+                        error.append("Mobile already exits");
+                }
+                break;
+            }
+        }
+
+        if (!isUpdate) {
+            for (Trainee temp : Database.trainees) {
+                if (trainee.getNic().equals(temp.getNic()))
+                    error.append("NIC already exits\n");
+                if (trainee.getEmail().equals(temp.getEmail()))
+                    error.append("E-mail already exits\n");
+                if (trainee.getMobile().equals(temp.getMobile()))
+                    error.append("Mobile already exits");
+            }
+        }
+
+        return new ErrorHandler(error, error.length() > 0);
+    }
+
 
     private void save(Trainee trainee) {
         ErrorHandler errorHandler = checkErrors(trainee);
@@ -220,60 +306,44 @@ public class TraineeManagementFormController {
         }
     }
 
-    public void resetOnAction(ActionEvent actionEvent) {
-        String id = txtid.getText();
-        FormController.clearForm(gridPane);
-        txtid.setText(id);
-    }
 
     private void loadExperienceLevel() {
         FormController.loadComboBoxData(Database.traineeLevels, cmbExperience);
+        FormController.loadComboBoxData(Database.traineeLevels, cmbSearchExperience);
     }
 
     private void loadGenders() {
         FormController.loadComboBoxData(Database.genders, cmbGender);
+        FormController.loadComboBoxData(Database.genders, cmbSearchGender);
     }
 
+    public void addListeners() {
+        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            searchText.setLength(0); // Clear previous value
+            searchText.append(newValue);
+            queryParam = "searchText=" + searchText + "&gender=" + searchGender + "&level=" + searchLevel;
+            loadTraineeTableData(queryParam);
+        });
 
-    public void addNewTraineeOnAction(ActionEvent actionEvent) {
-        btnCreate.setText("Create");
-        btnCreate.setStyle("-fx-background-color:#FF6A00; -fx-text-fill: white;");
-        btnAddNewTrainee.setVisible(false);
-        FormController.clearForm(gridPane);
-        txtid.setText(RandomKeyGenerator.generateTraineeId());
-
-    }
-
-    private ErrorHandler checkErrors(Trainee trainee) {
-        StringBuilder error = new StringBuilder();
-        boolean isUpdate = false;
-
-        for (Trainee tr : Database.trainees) {
-            if (tr.getId().equals(trainee.getId())) {
-                isUpdate = true;
-                for (Trainee temp : Database.trainees) {
-                    if (!(trainee.getId().equals(temp.getId())) && trainee.getNic().equals(temp.getNic()))
-                        error.append("NIC already exits\n");
-                    if (!(trainee.getId().equals(temp.getId())) && trainee.getEmail().equals(temp.getEmail()))
-                        error.append("E-mail already exits\n");
-                    if (!(trainee.getId().equals(temp.getId())) && trainee.getMobile().equals(temp.getMobile()))
-                        error.append("Mobile already exits");
-                }
-                break;
+        cmbSearchGender.valueProperty().addListener((observable, oldValue, newValue) -> {
+            searchGender.setLength(0);
+            if (newValue != null) {
+                searchGender.append(newValue.getName());
             }
-        }
+            queryParam = "searchText=" + searchText + "&gender=" + searchGender + "&level=" + searchLevel;
+            loadTraineeTableData(queryParam);
+        });
 
-        if (!isUpdate) {
-            for (Trainee temp : Database.trainees) {
-                if (trainee.getNic().equals(temp.getNic()))
-                    error.append("NIC already exits\n");
-                if (trainee.getEmail().equals(temp.getEmail()))
-                    error.append("E-mail already exits\n");
-                if (trainee.getMobile().equals(temp.getMobile()))
-                    error.append("Mobile already exits");
+        cmbSearchExperience.valueProperty().addListener((observable, oldValue, newValue) -> {
+            searchLevel.setLength(0);
+            if (newValue != null) {
+                searchLevel.append(newValue.getName());
             }
-        }
+            queryParam = "searchText=" + searchText + "&gender=" + searchGender + "&level=" + searchLevel;
+            loadTraineeTableData(queryParam);
+        });
 
-        return new ErrorHandler(error, error.length() > 0);
     }
+
+
 }
