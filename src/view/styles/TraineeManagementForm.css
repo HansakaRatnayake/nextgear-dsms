@@ -11,28 +11,9 @@
 
 }
 
-.text-field{
-    -fx-font-family: "Open Sans";
-    -fx-pref-width: 258px;
-    -fx-pref-height: 50px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-border-color: #5F5D5D;
-    -fx-background-color: rgba(255, 255, 255, 0);
-    -fx-border-width: 1px;
-    -fx-font-size: 12px;
-    -fx-font-weight: 700;
-    -fx-padding: 0 13px 0 13px;
-    -fx-text-fill: white!important;
-}
-
 .txt-id{
     -fx-font-style: italic;
 }
-
-
-
-
 
 .button{
     -fx-pref-width: 104px;
