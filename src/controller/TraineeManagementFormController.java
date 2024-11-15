@@ -146,12 +146,12 @@ public class TraineeManagementFormController {
 
     ObservableList<TraineeTM> obList = FXCollections.observableArrayList();
 
-    private void loadTraineeTableData(String searchText) {
+    private void loadTraineeTableData(String queryParam) {
         obList.clear();
         List<Trainee> filteredTrainees = Database.trainees;
 
 
-        String[] pairs = searchText.split("&");
+        String[] pairs = queryParam.split("&");
         for (String pair : pairs) {
             String[] keyValue = pair.split("=");
 
