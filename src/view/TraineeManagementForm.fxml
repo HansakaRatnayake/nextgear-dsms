@@ -44,10 +44,11 @@
                 </GridPane>
             </children>
         </AnchorPane>
-        <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Add New Trainee" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
+        <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Trainee Detail" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
         <Button fx:id="btnCreate" layoutX="778.0" layoutY="279.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/ButtonCustom.css" text="Create" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="261.0" />
         <Button layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/ButtonCustom.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
-        <TextField fx:id="txtSearch" layoutX="81.0" layoutY="376.0" promptText="Search" stylesheets="@styles/TextFieldCustom.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="338.0" />
+      <Button fx:id="btnAddNewTrainee" layoutX="674.0" layoutY="17.0" mnemonicParsing="false" onAction="#addNewTraineeOnAction" prefWidth="258.0" style="-fx-pref-width: 258px;" styleClass="btn-create" stylesheets="@styles/ButtonCustom.css" text="Add New Trainee" visible="false" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="17.0" />
+        <TextField fx:id="txtSearch" layoutX="81.0" layoutY="376.0" promptText="Search by id, name, email, nic, mobile" stylesheets="@styles/TextFieldCustom.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="338.0" />
         <TableView fx:id="tblTrainee" layoutX="380.0" layoutY="373.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@styles/TableViewCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="406.0">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="69.0" styleClass="column" text="ID" />
@@ -63,6 +64,8 @@
                 <TableColumn fx:id="colActions" prefWidth="149.0" styleClass="column" text="Actions" />
             </columns>
         </TableView>
-      <Button fx:id="btnAddNewTrainee" layoutX="678.0" layoutY="307.0" mnemonicParsing="false" onAction="#addNewTraineeOnAction" prefWidth="217.0" styleClass="btn-create" stylesheets="@styles/TraineeManagementForm.css" text="Add New Trainee" visible="false" AnchorPane.leftAnchor="678.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="307.0" />
+      <ComboBox fx:id="cmbSearchExperience" layoutX="527.0" layoutY="338.0" prefWidth="149.0" promptText="Experience" style="-fx-pref-width: 150px;" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" AnchorPane.leftAnchor="527.0" AnchorPane.topAnchor="338.0" />
+      <ComboBox fx:id="cmbSearchGender" layoutX="351.0" layoutY="338.0" prefWidth="149.0" promptText="Gender" style="-fx-pref-width: 150px;" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" AnchorPane.leftAnchor="351.0" AnchorPane.topAnchor="338.0" />
+      <Button layoutX="790.0" layoutY="345.0" mnemonicParsing="false" onAction="#resetFilterOnAction" style="-fx-border-color: red;" styleClass="btn-reset" stylesheets="@styles/ButtonCustom.css" text="Reset Filter" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="345.0" />
     </children>
 </AnchorPane>
