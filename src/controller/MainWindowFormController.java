@@ -11,9 +11,6 @@ public class MainWindowFormController {
 
     public AnchorPane contextOutlet;
 
-    public void initialize() {
-        dashboardOnAction(new ActionEvent());
-    }
 
     public void dashboardOnAction(ActionEvent actionEvent) {
         loadUI("Dashboard");
@@ -41,6 +38,14 @@ public class MainWindowFormController {
         }catch (IOException e){
             e.printStackTrace();
         }
+
+    }
+
+    public void trainingOnAction(ActionEvent actionEvent) {loadUI("TrainingProgramManagement");
+
+    }
+
+    public void registrationOnAction(ActionEvent actionEvent) {loadUI("RegistrationMain");
 
     }
 }
