@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="959.0" style="-fx-background-color: #2C2A2A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SheduleManagementFormController">
+   <children>
+      <Label layoutX="35.0" layoutY="51.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Add New Shedule" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
+      <AnchorPane layoutX="38.0" layoutY="74.0" prefHeight="229.0" prefWidth="959.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="64.0">
+         <children>
+            <GridPane fx:id="gridPane" prefHeight="228.0" prefWidth="959.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                  <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+                  <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="258.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="txtid" editable="false" promptText="ID" stylesheets="@styles/TextFieldCustom.css" />
+                  <ComboBox fx:id="cmbGender" prefWidth="150.0" promptText="Select Gender" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <AnchorPane prefHeight="57.0" prefWidth="265.0" style="-fx-pref-width: 258; -fx-pref-height: 50;" GridPane.columnIndex="2">
+                     <padding>
+                        <Insets bottom="4.0" top="4.0" />
+                     </padding>
+                     <children>
+                        <ComboBox layoutX="9.0" layoutY="20.0" prefWidth="150.0" promptText="From" style="-fx-pref-width: 121;" stylesheets="@styles/ComboboxCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ComboBox layoutX="111.0" layoutY="18.0" prefWidth="150.0" promptText="To" style="-fx-pref-width: 121;" stylesheets="@styles/ComboboxCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="57.0" prefWidth="265.0" style="-fx-pref-width: 258; -fx-pref-height: 50;" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="4.0" top="4.0" />
+                     </padding>
+                     <children>
+                        <ComboBox layoutX="9.0" layoutY="20.0" prefWidth="150.0" promptText="Type" style="-fx-pref-width: 121;" stylesheets="@styles/ComboboxCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ComboBox layoutX="111.0" layoutY="18.0" prefWidth="150.0" promptText="Category" style="-fx-pref-width: 121;" stylesheets="@styles/ComboboxCustom.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <ComboBox fx:id="cmbGender1" prefWidth="150.0" promptText="Vehicle" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cmbGender2" prefWidth="150.0" promptText="Select trainer" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtid2" editable="false" stylesheets="@styles/TextFieldCustom.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cmbGender4" prefWidth="150.0" promptText="Trainees" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cmbGender3" prefWidth="150.0" promptText="Route" styleClass="combo-box" stylesheets="@styles/ComboboxCustom.css" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Label layoutX="31.0" layoutY="314.0" styleClass="lbl-heading" stylesheets="@styles/LabelCustom.css" text="Schedule details" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="306.0" />
+      <TextField fx:id="txtid1" editable="false" layoutX="91.0" layoutY="336.0" promptText="Search" stylesheets="@styles/TextFieldCustom.css" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="336.0" />
+      <TableView fx:id="tblTrainee" layoutX="66.0" layoutY="398.0" prefHeight="185.0" prefWidth="844.0" stylesheets="@styles/TableViewCustom.css">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="60.0" styleClass="column" text="ID" />
+            <TableColumn fx:id="colFName" prefWidth="88.66665649414062" styleClass="column" text="Date" />
+            <TableColumn fx:id="colLName" prefWidth="91.66665649414062" styleClass="column" text="Trainer" />
+            <TableColumn fx:id="colEmail" prefWidth="74.33334350585938" styleClass="column" text="Type" />
+            <TableColumn fx:id="colMobile" prefWidth="101.66665649414062" styleClass="column" text="Category" />
+            <TableColumn fx:id="colNic" prefWidth="78.33334350585938" styleClass="column" text="vehicle" />
+            <TableColumn fx:id="colDob" prefWidth="75.6666259765625" styleClass="column" text="from" />
+            <TableColumn fx:id="colAddress" prefWidth="64.3333740234375" styleClass="column" text="to" />
+            <TableColumn fx:id="colGender" prefWidth="87.33331298828125" styleClass="column" text="trainees" />
+            <TableColumn fx:id="colLevel" prefWidth="132.0" styleClass="column" text="options" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnCreate" layoutX="788.0" layoutY="289.0" mnemonicParsing="false" onAction="#createOnAction" styleClass="btn-create" stylesheets="@styles/ButtonCustom.css" text="Create" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="261.0" />
+      <Button layoutX="636.0" layoutY="315.0" mnemonicParsing="false" onAction="#resetOnAction" styleClass="btn-reset" stylesheets="@styles/ButtonCustom.css" text="Reset" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="261.0" />
+   </children>
+</AnchorPane>
