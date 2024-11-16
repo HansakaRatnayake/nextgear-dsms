@@ -1,6 +1,8 @@
 package model;
 
-public class Role extends Supportive{
+import util.SupportiveCM;
+
+public class Role extends SupportiveCM {
 
 
     public Role() {

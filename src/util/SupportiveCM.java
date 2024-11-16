@@ -1,14 +1,14 @@
-package model;
+package util;
 
-public class Supportive {
+public class SupportiveCM {
 
     private Integer id;
     private String name;
 
-    public Supportive() {
+    public SupportiveCM() {
     }
 
-    public Supportive(Integer id, String name) {
+    public SupportiveCM(Integer id, String name) {
         this.id = id;
         this.name = name;
     }

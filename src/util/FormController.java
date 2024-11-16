@@ -8,13 +8,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.TextField;
-import model.Supportive;
 
 import java.util.List;
 
 public class FormController {
 
-    public static <T extends Supportive> void loadComboBoxData(List<T> data, ComboBox<T> comboBox) {
+    public static <T extends SupportiveCM> void loadComboBoxData(List<T> data, ComboBox<T> comboBox) {
         // Create an observable list from the data
         ObservableList<T> dataList = FXCollections.observableArrayList(data);
 

@@ -16,6 +16,7 @@ public class EmployeeManagementMainFormController {
     }
 
     public void trainerManageOnAction(MouseEvent mouseEvent) {
+        loadUI("TrainerManagement");
 
     }
 

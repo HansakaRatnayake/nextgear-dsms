@@ -17,6 +17,8 @@ public class Database {
     public static ArrayList<Gender> genders= new ArrayList();
     public static ArrayList<TraineeLevel> traineeLevels= new ArrayList();
     public static ArrayList<Role> roles= new ArrayList();
+    public static ArrayList<VehicleCategory> vehicleCategories= new ArrayList();
+    public static ArrayList<VehicleType> vehicleTypes= new ArrayList();
 
 
 
@@ -38,6 +40,19 @@ public class Database {
                 new Role(2,"Trainer"),
                 new Role(3,"Receptionist"),
                 new Role(4,"Vehicle Maintainer")
+        ));
+
+        vehicleTypes.addAll(Arrays.asList(
+                new VehicleType(1,"Light vehicles"),
+                new VehicleType(2,"Long vehicles")
+        ));
+
+        vehicleCategories.addAll(Arrays.asList(
+                new VehicleCategory(1,"Car",new VehicleType(1,"Light vehicles")),
+                new VehicleCategory(2,"Van",new VehicleType(1,"Light vehicles")),
+                new VehicleCategory(3,"Bus",new VehicleType(2,"Long vehicles")),
+                new VehicleCategory(4,"MotorBike",new VehicleType(1,"Light vehicles")),
+                new VehicleCategory(5,"TukTuk",new VehicleType(1,"Light vehicles"))
         ));
 
         trainees.addAll(Arrays.asList(
