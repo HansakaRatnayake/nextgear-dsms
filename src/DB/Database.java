@@ -1,8 +1,6 @@
 package DB;
 
-import model.Gender;
-import model.Trainee;
-import model.TraineeLevel;
+import model.*;
 import util.RandomKeyGenerator;
 
 import java.time.LocalDate;
@@ -14,8 +12,13 @@ import java.util.List;
 public class Database {
 
     public static ArrayList<Trainee> trainees= new ArrayList();
+    public static ArrayList<Employee> employees= new ArrayList();
+
     public static ArrayList<Gender> genders= new ArrayList();
     public static ArrayList<TraineeLevel> traineeLevels= new ArrayList();
+    public static ArrayList<Role> roles= new ArrayList();
+    public static ArrayList<VehicleCategory> vehicleCategories= new ArrayList();
+    public static ArrayList<VehicleType> vehicleTypes= new ArrayList();
 
 
 
@@ -32,9 +35,35 @@ public class Database {
                 new TraineeLevel(1,"Experienced")
         ));
 
+        roles.addAll(Arrays.asList(
+                new Role(1,"Admin"),
+                new Role(2,"Trainer"),
+                new Role(3,"Receptionist"),
+                new Role(4,"Vehicle Maintainer")
+        ));
+
+        vehicleTypes.addAll(Arrays.asList(
+                new VehicleType(1,"Light vehicles"),
+                new VehicleType(2,"Long vehicles")
+        ));
+
+        vehicleCategories.addAll(Arrays.asList(
+                new VehicleCategory(1,"Car",new VehicleType(1,"Light vehicles")),
+                new VehicleCategory(2,"Van",new VehicleType(1,"Light vehicles")),
+                new VehicleCategory(3,"Bus",new VehicleType(2,"Long vehicles")),
+                new VehicleCategory(4,"MotorBike",new VehicleType(1,"Light vehicles")),
+                new VehicleCategory(5,"TukTuk",new VehicleType(1,"Light vehicles"))
+        ));
+
         trainees.addAll(Arrays.asList(
                 new Trainee(RandomKeyGenerator.generateTraineeId(),"Kamal","Perera","kamal@gmail.com","200216500907","0715456565","Gampaha", LocalDate.of(2002,6,13),new TraineeLevel(1,"Beginner"), new Gender(1,"Male")),
                 new Trainee(RandomKeyGenerator.generateTraineeId(),"Namal","Rajapaksa","namal@gmail.com","200116500907","0715453465","Colombo", LocalDate.of(2000,6,13),new TraineeLevel(1,"Beginner"), new Gender(1,"Male"))
+        ));
+
+        employees.addAll(Arrays.asList(
+                new Employee(RandomKeyGenerator.generateEmployeeId(),"Mahinda","Appachchi","maina@gmail.com","200012322125","0717656789","Kurunegala", LocalDate.of(2000,5,13),new Role(1,"Admin"), new Gender(1,"Male")),
+                new Employee(RandomKeyGenerator.generateEmployeeId(),"Ranil","Seeya","seeya@gmail.com","200043546563","0715553123","Colombo", LocalDate.of(2000,2,20),new Role(2,"Trainer"), new Gender(1,"Male")),
+                new Employee(RandomKeyGenerator.generateEmployeeId(),"Shiranthi","Madam","shiranthi@gmail.com","200123540328","0712453423","Gampaha", LocalDate.of(2001,4,22),new Role(3,"Receptionist"), new Gender(2,"Female"))
         ));
     }
 

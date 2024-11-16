@@ -1,0 +1,41 @@
+.chip{
+    -fx-text-fill: white;
+    -fx-background-color: #FF6A00;
+    -fx-padding: 3px 5px 3px 5px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    /*-fx-alignment: center;*/
+
+    /*-fx-pref-width: 50px;*/
+    /*-fx-text-alignment: center;*/
+}
+.lbl-text{
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-family: "Open Sans";
+    -fx-font-weight: 700;
+}
+.cancel-outer{
+    -fx-background-color: red;
+    -fx-border-radius: 100%;
+    -fx-pref-width: 18px;
+    /*-fx-pref-height: 10px;*/
+    -fx-background-radius: 100%;
+    /*-fx-padding: 4px;*/
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+    -fx-row-valignment: center;
+    -fx-column-halignment: center;
+    -fx-text-fill: 700;
+}
+
+.cancel-outer:hover{
+    -fx-cursor: hand;
+}
+
+/*.image-view{*/
+/*    -fx-text-alignment: center;*/
+/*    -fx-alignment: center;*/
+/*    -fx-column-halignment: center;*/
+/*    -fx-row-valignment: center;*/
+/*}*/

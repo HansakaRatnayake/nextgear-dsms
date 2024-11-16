@@ -1,6 +1,8 @@
 package model;
 
-public class TraineeLevel extends Supportive{
+import util.SupportiveCM;
+
+public class TraineeLevel extends SupportiveCM {
 
     public TraineeLevel() {
     }

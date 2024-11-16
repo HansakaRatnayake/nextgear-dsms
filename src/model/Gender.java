@@ -1,6 +1,8 @@
 package model;
 
-public class Gender extends Supportive{
+import util.SupportiveCM;
+
+public class Gender extends SupportiveCM {
 
     public Gender() {
     }
