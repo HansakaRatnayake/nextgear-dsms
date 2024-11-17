@@ -27,6 +27,8 @@ public class MainWindowFormController {
         loadUI("EmployeeManagementMain");
     }
 
+    public void scheduleOnAction(ActionEvent actionEvent) {loadUI("ScheduleManagement");}
+
     public void loadUI(String context){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/"+context+"Form.fxml"));
@@ -47,6 +49,7 @@ public class MainWindowFormController {
         }
 
     }
+
 
 
 }

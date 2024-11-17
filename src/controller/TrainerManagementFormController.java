@@ -66,16 +66,16 @@ public class TrainerManagementFormController {
     }
 
     private void loadTrainers() {
-        Database.employees.stream().map(e->{
-            if (e.getRole().getName().equals("Trainer")){
-                return new Trainer(
-                        e.getId(),
-                        e.getFirstName() + " " + e.getLastName(),
-                        e.getEmail(),
-
-                );
-            }
-        })
+//        Database.employees.stream().map(e->{
+//            if (e.getRole().getName().equals("Trainer")){
+//                return new Trainer(
+//                        e.getId(),
+//                        e.getFirstName() + " " + e.getLastName(),
+//                        e.getEmail(),
+//
+//                );
+//            }
+//        })
     }
 
     private void loadVehicleCategories() {
